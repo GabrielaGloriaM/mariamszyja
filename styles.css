@@ -502,7 +502,7 @@ h3 {
   border-radius: 4px;
   background:
     linear-gradient(140deg, transparent, rgba(184, 50, 104, 0.66) 58%, transparent 70%),
-    url("assets/hero-person-campaign-v2.png") center / cover,
+    url("hero-person-campaign-v2.png") center / cover,
     #121212;
   box-shadow: 18px 24px 45px rgba(0, 0, 0, 0.62);
 }
