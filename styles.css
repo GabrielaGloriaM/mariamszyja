@@ -11,6 +11,7 @@
   --cyan: #48b9bd;
   --white: #ffffff;
   --shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+  --divider-gap: clamp(42px, 5vw, 62px);
   --font-ui: "Roboto Condensed", "Segoe UI", Arial, sans-serif;
   --font-display: "Bebas Neue", "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
 }
@@ -110,7 +111,7 @@ nav a:hover::after {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 3px;
+  height: 2px;
   background: var(--magenta);
 }
 
@@ -189,8 +190,8 @@ nav a:hover::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  filter: saturate(1.08) contrast(1.16) brightness(0.78);
+  object-position: 56% top;
+  filter: saturate(1.08) contrast(1.1) brightness(0.94);
 }
 
 .hero-shade {
@@ -198,7 +199,7 @@ nav a:hover::after {
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.78) 34%, rgba(0, 0, 0, 0.16) 66%, rgba(0, 0, 0, 0.72) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.76) 34%, rgba(0, 0, 0, 0.05) 63%, rgba(0, 0, 0, 0.44) 100%),
     linear-gradient(180deg, rgba(0, 0, 0, 0.08), #050505 100%);
 }
 
@@ -214,7 +215,7 @@ nav a:hover::after {
   min-height: 310px;
   background: linear-gradient(135deg, transparent 20%, rgba(184, 50, 104, 0.68), transparent 80%);
   clip-path: polygon(12% 24%, 100% 0, 76% 64%, 8% 100%, 0 58%);
-  opacity: 0.58;
+  opacity: 0.42;
   mix-blend-mode: screen;
 }
 
@@ -448,6 +449,50 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.fundraising-strip::before,
+.story-section::before,
+.reason-grid::before,
+.campaign-section::before,
+.program-section::before,
+.support-section::before,
+.meet-section::before,
+.stats::before,
+.checkout::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: var(--magenta);
+  box-shadow: 0 0 20px rgba(184, 50, 104, 0.34);
+  pointer-events: none;
+}
+
+.fundraising-strip::before,
+.reason-grid::before,
+.stats::before {
+  top: calc(-1 * var(--divider-gap));
+}
+
+.story-section::before,
+.campaign-section::before,
+.support-section::before {
+  top: calc(clamp(72px, 9vw, 118px) - var(--divider-gap));
+}
+
+.meet-section::before {
+  top: calc(clamp(64px, 8vw, 104px) - var(--divider-gap));
+}
+
+.program-section::before {
+  top: calc(clamp(62px, 8vw, 104px) - var(--divider-gap));
+}
+
+.checkout::before {
+  top: calc(clamp(76px, 9vw, 118px) - var(--divider-gap));
+}
+
 .fundraising-copy {
   display: grid;
   gap: 18px;
@@ -550,6 +595,119 @@ footer,
   font-family: var(--font-ui);
 }
 
+@media (min-width: 1700px) {
+  .site-header {
+    padding-inline: calc((100vw - 1480px) / 2);
+  }
+
+  .hero {
+    min-height: 900px;
+    padding-inline: max(56px, calc((100vw - 1480px) / 2));
+  }
+
+  .hero > img {
+    object-position: 54% top;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.82) 28%, rgba(0, 0, 0, 0.08) 58%, rgba(0, 0, 0, 0.58) 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.08), #050505 100%);
+  }
+
+  .hero-copy {
+    width: min(760px, 42vw);
+  }
+
+  .quote-panel {
+    right: max(56px, calc((100vw - 1480px) / 2));
+    width: 380px;
+  }
+
+  .fundraising-strip {
+    grid-template-columns: minmax(0, 1.25fr) minmax(420px, 0.72fr);
+  }
+
+  .program-grid {
+    gap: 22px;
+  }
+
+  .reason-grid {
+    gap: 34px;
+  }
+
+  .reason-grid article {
+    min-height: 520px;
+  }
+
+  .product-strip,
+  .fundraising-strip,
+  .reason-grid,
+  .preview,
+  .stats,
+  .checkout,
+  .story-section,
+  .campaign-section,
+  .support-section,
+  .meet-section,
+  .program-section {
+    width: min(1560px, calc(100% - 140px));
+  }
+}
+
+@media (min-width: 2200px) {
+  .site-header {
+    padding-inline: calc((100vw - 1600px) / 2);
+  }
+
+  .hero {
+    min-height: 940px;
+    padding-inline: calc((100vw - 1600px) / 2);
+  }
+
+  .hero > img {
+    object-position: center top;
+  }
+
+  .hero-copy {
+    width: 780px;
+  }
+
+  .quote-panel {
+    right: calc((100vw - 1600px) / 2);
+  }
+
+  .fundraising-strip {
+    grid-template-columns: minmax(0, 1.32fr) minmax(460px, 0.7fr);
+  }
+
+  .program-grid {
+    gap: 26px;
+  }
+
+  .reason-grid {
+    gap: 40px;
+  }
+
+  .reason-grid article {
+    min-height: 560px;
+  }
+
+  .product-strip,
+  .fundraising-strip,
+  .reason-grid,
+  .preview,
+  .stats,
+  .checkout,
+  .story-section,
+  .campaign-section,
+  .support-section,
+  .meet-section,
+  .program-section {
+    width: min(1760px, calc(100% - 180px));
+  }
+}
+
 .product-copy {
   align-self: center;
 }
@@ -578,7 +736,7 @@ footer,
 }
 
 .product-copy li::before {
-  content: "âś“";
+  content: "\2713";
   margin-right: 10px;
   color: var(--white);
 }
@@ -691,6 +849,7 @@ footer,
 }
 
 .reason-grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(20px, 2.6vw, 30px);
@@ -700,14 +859,17 @@ footer,
 .story-section,
 .campaign-section,
 .support-section {
+  position: relative;
   padding: clamp(72px, 9vw, 118px) 0 0;
 }
 
 .meet-section {
+  position: relative;
   padding-top: clamp(64px, 8vw, 104px);
 }
 
 .program-section {
+  position: relative;
   padding-top: clamp(62px, 8vw, 104px);
 }
 
@@ -778,7 +940,7 @@ footer,
 
 .priority-list span::before,
 .support-list li::before {
-  content: "âś“";
+  content: "\2713";
   position: absolute;
   left: 17px;
   color: var(--cyan);
@@ -806,10 +968,16 @@ footer,
 
 .support-list ul {
   display: grid;
-  gap: 10px;
+  gap: 14px;
   margin: 22px 0;
   padding: 0;
   list-style: none;
+}
+
+.support-list li + li,
+.meet-card article + article {
+  border-top-color: rgba(72, 185, 189, 0.42);
+  box-shadow: 0 -15px 0 -14px rgba(255, 255, 255, 0.2);
 }
 
 .meet-section {
@@ -1084,6 +1252,7 @@ footer,
 }
 
 .stats {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(16px, 2vw, 26px);
@@ -1145,6 +1314,7 @@ footer,
 }
 
 .checkout {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(340px, 470px);
   gap: clamp(30px, 7vw, 90px);
