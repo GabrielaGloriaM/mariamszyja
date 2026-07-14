@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Fundraisingowe wsparcie kampanii senackiej Mariam Szyja: odpowiedzialność, równe szanse i region, którego nie chcemy opuszczać."
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Mariam Szyja | Wesprzyj kampanię</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="alternate" hreflang="cs" href="https://mariamszyja.cz/" />
+    <link rel="alternate" hreflang="pl" href="https://mariamszyja.cz/pl/" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#uvod" aria-label="Strona główna Mariam Szyja">
+        <strong>Mariam Szyja</strong>
+        <span>Senatorka dla regionu Karwiny</span>
+      </a>
+      <nav aria-label="Główna nawigacja">
+        <a class="active" href="#uvod">Strona główna</a>
+        <a href="#proc">Dlaczego kandyduję</a>
+        <a href="#program">Program</a>
+        <a href="#potkejme-se">Spotkajmy się</a>
+        <a href="#podpora">Wesprzyj kampanię</a>
+        <a href="#omne">O mnie</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Język">
+          <a href="../index.html">CZ</a>
+          <a class="active" href="index.html">PL</a>
+        </div>
+        <a class="header-cta" href="#podpora">Wesprzyj</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="uvod">
+        <img src="../hero-person-campaign-v2.png" alt="Wizual kampanii Mariam Szyja" />
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">Mariam Szyja do Senatu 2026</p>
+          <h1><span>Region, którego nie chcemy opuszczać.</span> Państwo, które służy ludziom.</h1>
+          <p class="lead">
+            Kandyduję do Senatu Parlamentu Republiki Czeskiej w okręgu wyborczym nr 75 — Karwina.
+          </p>
+          <p class="lead secondary-lead">
+            Nie chcę być polityczką, która mówi ludziom tylko to, co chcą usłyszeć. Chcę być senatorką, która mówi prawdę, szuka rozwiązań i bierze odpowiedzialność za swoją pracę.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#podpora">Wesprzeć kampanię <span>→</span></a>
+            <a class="button secondary" href="#program">Zobacz program</a>
+          </div>
+        </div>
+        <aside class="quote-panel" aria-label="Cytat">
+          <span class="quote-mark">“</span>
+          <p>Nie wierzę, że człowiek musi znać odpowiedź na wszystko. Wierzę, że powinien mieć odwagę zadawać właściwe pytania, słuchać ekspertów i brać odpowiedzialność za swoje decyzje.</p>
+          <strong>Mariam Szyja</strong>
+          <div class="role-box">
+            <span>Lekarka dentystka.</span>
+            <span>Mama.</span>
+            <span>Mieszkanka Karwiny.</span>
+            <span>Kandydatka do Senatu.</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="fundraising-strip" id="podpora">
+        <div class="fundraising-copy">
+          <p class="eyebrow">Fundraising kampanii</p>
+          <h2>Pomóżmy wprowadzić do Senatu głos regionu Karwiny.</h2>
+          <p>
+            Twoje wsparcie pomoże sfinansować kampanię opartą na odpowiedzialności, uczciwości, równych szansach i ustawach, które mają ludziom życie upraszczać, a nie komplikować.
+          </p>
+        </div>
+        <div class="donation-panel">
+          <div class="price-line">
+            <strong data-active-price>100 Kč</strong>
+            <span>Sugerowany wkład w kampanię</span>
+          </div>
+          <fieldset class="option-group">
+            <legend>Wysokość wsparcia</legend>
+            <label>
+              <input type="radio" name="variant" value="support100" checked />
+              <span>Podstawowe wsparcie</span>
+              <strong>100 Kč</strong>
+            </label>
+            <label>
+              <input type="radio" name="variant" value="support500" />
+              <span>Silniejsze wsparcie</span>
+              <strong>500 Kč</strong>
+            </label>
+            <label>
+              <input type="radio" name="variant" value="support1000" />
+              <span>Główne wsparcie</span>
+              <strong>1 000 Kč</strong>
+            </label>
+            <label class="custom-option">
+              <input type="radio" name="variant" value="custom" />
+              <span>Inna kwota</span>
+              <strong>własna</strong>
+            </label>
+          </fieldset>
+          <label class="custom-amount is-hidden" data-custom-amount-wrap>
+            Własna kwota w Kč
+            <input type="number" min="1" step="1" inputmode="numeric" name="customAmount" data-custom-amount placeholder="Np. 1500" />
+          </label>
+          <div class="quantity is-hidden">
+            <span>Liczba</span>
+            <button type="button" data-qty-minus aria-label="Zmniejsz liczbę">−</button>
+            <output data-qty>1</output>
+            <button type="button" data-qty-plus aria-label="Zwiększ liczbę">+</button>
+          </div>
+          <button class="button primary wide" type="button" data-add-cart>Przejdź do wsparcia <span>→</span></button>
+          <div class="micro-benefits">
+            <span>Płatność zewnętrzna</span>
+            <span>Wsparcie regionu</span>
+            <span>Przejrzysty cel</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calendar sales block is intentionally hidden until the calendar is ready. Remove is-hidden and aria-hidden to restore it. -->
+      <section class="product-strip is-hidden" id="produkt" aria-hidden="true">
+        <div class="calendar-cover" aria-label="Podgląd kalendarza">
+          <div class="binder"></div>
+          <div class="cover-art">
+            <span>MARIAM</span>
+            <strong>SZYJA</strong>
+            <em>2027</em>
+            <small>12 miesięcy odwagi</small>
+          </div>
+        </div>
+        <div class="product-copy">
+          <h2>Kalendarz Mariam Szyja 2027</h2>
+          <p class="cyan">12 miesięcy odwagi</p>
+          <ul>
+            <li>Inspirujące fotografie z naszego regionu</li>
+            <li>Mocne myśli, które łączą</li>
+            <li>Wsparcie kampanii na rzecz bardziej dostępnej opieki w regionie Karwiny</li>
+          </ul>
+        </div>
+        <div class="buy-panel">
+          <div class="price-line">
+            <strong data-active-price>1 000 Kč</strong>
+            <span>Limitowana edycja 2027 sztuk</span>
+          </div>
+          <fieldset class="option-group">
+            <legend>Wariant</legend>
+            <label>
+              <input type="radio" name="calendarVariant" value="classic" checked />
+              <span>Kalendarz 2027</span>
+              <strong>1 000 Kč</strong>
+            </label>
+            <label>
+              <input type="radio" name="calendarVariant" value="gift" />
+              <span>Opakowanie prezentowe</span>
+              <strong>1 200 Kč</strong>
+            </label>
+            <label>
+              <input type="radio" name="calendarVariant" value="set" />
+              <span>Zestaw 3 sztuk</span>
+              <strong>2 700 Kč</strong>
+            </label>
+          </fieldset>
+          <div class="quantity">
+            <span>Liczba</span>
+            <button type="button" data-qty-minus aria-label="Zmniejsz liczbę">−</button>
+            <output data-qty>1</output>
+            <button type="button" data-qty-plus aria-label="Zwiększ liczbę">+</button>
+          </div>
+          <button class="button primary wide" type="button" data-add-cart>Kup teraz <span>▢</span></button>
+          <div class="micro-benefits">
+            <span>Szybka dostawa</span>
+            <span>Płatność przelewem</span>
+            <span>Odbiór osobisty</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-section" id="omne">
+        <div class="section-kicker">Dlaczego kandyduję</div>
+        <div class="story-grid">
+          <h2>Nigdy nie planowałam zostać polityczką.</h2>
+          <div class="story-copy">
+            <p>
+              Do życia publicznego nie przyprowadziła mnie chęć stanowiska ani władzy. Przyprowadziło mnie zwykłe życie.
+            </p>
+            <p>
+              Tak jak tysiące ludzi w naszym regionie zajmowałam się pracą, rodziną, kredytem hipotecznym, budową domu i troską o przyszłość swoich dzieci. Zobaczyłam, jak łatwo źle napisane ustawy mogą skomplikować życie ludziom, którzy starają się żyć uczciwie i brać odpowiedzialność za siebie.
+            </p>
+            <p>
+              Kiedy weszłam do polityki samorządowej, zrozumiałam jeszcze jedną rzecz. Wiele problemów, które rozwiązują miasta i gminy, nie powstaje w ratuszu. Powstaje podczas tworzenia ustaw.
+            </p>
+            <p>
+              Właśnie dlatego kandyduję do Senatu. Chcę być senatorką, która będzie mówić prawdę, szukać rozwiązań i brać odpowiedzialność za swoją pracę.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="reason-grid" id="proc">
+        <article>
+          <span class="card-icon cyan card-icon-left">✚</span>
+          <h3>Dobry lekarz nie ma być luksusem</h3>
+          <p>
+            Jedną z największych obaw ludzi jest to, że pewnego dnia nie będą mieli swojego lekarza. To nie jest problem jednostki. To problem państwa.
+          </p>
+          <a href="#program">Czytaj program →</a>
+        </article>
+        <article id="pece">
+          <span class="card-icon magenta card-icon-left">◎</span>
+          <h3>Dzieci powinny mieć powód, by wracać do domu</h3>
+          <p>
+            Region Karwiny nie jest regionem bez przyszłości. Mamy zdolnych ludzi, dobre szkoły i świetne położenie.
+          </p>
+          <a href="#program">Czytaj program →</a>
+        </article>
+        <article id="duvera">
+          <span class="card-icon magenta card-icon-left">♡</span>
+          <h3>Państwo ma ufać ludziom</h3>
+          <p>
+            Każda nowa ustawa powinna ułatwiać obywatelom życie. Nie komplikować. Mniej formularzy, więcej prawdziwej pracy.
+          </p>
+          <a href="#program">Czytaj program →</a>
+        </article>
+      </section>
+
+      <section class="campaign-section" id="zavazek">
+        <div>
+          <p class="eyebrow">Moje zobowiązanie</p>
+          <h2>Każda ustawa musi obronić się przed ludźmi i przed czasem.</h2>
+        </div>
+        <div class="priority-list">
+          <span>Czy pomoże ludziom?</span>
+          <span>Czy pomoże naszemu regionowi?</span>
+          <span>Czy obroni się także za dziesięć lat?</span>
+        </div>
+      </section>
+
+      <section class="program-section" id="program">
+        <div class="section-head program-head">
+          <h2>Program wyborczy <span>2026</span></h2>
+          <p>
+            Region, którego nie chcemy opuszczać. Państwo, które służy ludziom.
+          </p>
+        </div>
+        <div class="program-grid">
+          <article>
+            <span>01</span>
+            <h3>Dobry lekarz nie ma być luksusem</h3>
+            <p>
+              Będę zabiegać o zmiany, które ułatwią młodym lekarzom przejmowanie gabinetów, usuną zbędne bariery prawne i oddadzą pracownikom ochrony zdrowia czas dla pacjentów zamiast papierologii.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Dzieci powinny mieć powód, by wracać do domu</h3>
+            <p>
+              Region Karwiny ma zdolnych ludzi, dobre szkoły i świetne położenie. Potrzebujemy ustaw, które wesprą nowoczesny przemysł, innowacje, ochronę zdrowia, przedsiębiorczość i dobre miejsca pracy.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Państwo ma ufać ludziom</h3>
+            <p>
+              Będę wspierać prostsze prawo, mniej biurokracji i bardziej zrozumiałe zasady. Każda nowa ustawa ma życie upraszczać, nie komplikować.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Rodzina nie jest oczywistością</h3>
+            <p>
+              Wierzę, że najsilniejszą polityką społeczną jest funkcjonująca rodzina. Państwo nie może jej zastąpić, ale może przestać rzucać jej kłody pod nogi.
+            </p>
+          </article>
+          <article>
+            <span>05</span>
+            <h3>Pieniądze państwa nie są pieniędzmi polityków</h3>
+            <p>
+              Każda korona środków publicznych należy do obywateli. Przejrzystość nie jest dla mnie hasłem wyborczym. To podstawa zaufania.
+            </p>
+          </article>
+          <article>
+            <span>06</span>
+            <h3>Senator musi być wśród ludzi</h3>
+            <p>
+              Chcę regularnie odwiedzać gminy, rozmawiać z burmistrzami i wójtami, przedsiębiorcami, pracownikami ochrony zdrowia, szkołami i stowarzyszeniami. Słuchać, wyjaśniać i wracać z wynikami.
+            </p>
+          </article>
+          <article>
+            <span>07</span>
+            <h3>Równe szanse dla każdego</h3>
+            <p>
+              Zadaniem państwa jest zapewnić, aby każdy miał sprawiedliwą szansę odnieść sukces. Bez względu na to, skąd pochodzi, jaką ma rodzinę albo czy żyje z niepełnosprawnością.
+            </p>
+          </article>
+          <article>
+            <span>08</span>
+            <h3>Zrównoważona przyszłość to odpowiedzialność</h3>
+            <p>
+              Troska o środowisko nie stoi w sprzeczności z rozwojem przemysłu. Nowoczesna gospodarka opiera się na innowacjach, oszczędzaniu energii, mądrym gospodarowaniu wodą i odpowiedzialnym wykorzystaniu zasobów.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="support-section">
+        <div class="support-copy">
+          <p class="eyebrow">Czego możecie ode mnie oczekiwać</p>
+          <h2>Uczciwości, odpowiedzialności i pracy bez pustych obietnic.</h2>
+          <p>
+            Nie chcę obiecywać niemożliwego. Chcę wykonywać pracę, której nie będę musiała się wstydzić. Wierzę, że dobre społeczeństwo nie powstaje przypadkiem. Powstaje tam, gdzie ludzie biorą odpowiedzialność za siebie, gdzie państwo tworzy sprawiedliwe zasady i gdzie służba publiczna oznacza prawdziwą służbę obywatelom.
+          </p>
+          <p>
+            Nasz region ma zdolnych ludzi, doświadczenie i potencjał. Nie zasługuje na litość — potrzebuje szansy, by w pełni wykorzystać swój talent.
+          </p>
+        </div>
+        <div class="support-list">
+          <h3>Moje zobowiązanie służby publicznej</h3>
+          <ul>
+            <li>Będę głosować zgodnie ze swoim sumieniem.</li>
+            <li>Każdą swoją decyzję będę umiała publicznie wyjaśnić.</li>
+            <li>Nie będę głosować według partyjnych rozkazów.</li>
+            <li>Będę postępować przyzwoicie także wobec tych, którzy mają inne zdanie.</li>
+            <li>Będę szukać rozwiązań, nie wrogów.</li>
+          </ul>
+          <a class="button primary wide" href="#podpora">Wesprzeć kampanię</a>
+        </div>
+      </section>
+
+      <section class="meet-section" id="potkejme-se">
+        <div class="meet-copy">
+          <p class="eyebrow">Spotkajmy się</p>
+          <h2>Gdzie i kiedy możemy się spotkać</h2>
+          <p>
+            Przyjdź porozmawiać osobiście. O opiece zdrowotnej, rodzinach, regionie Karwiny i o tym, co według Ciebie najbardziej wymaga zmiany.
+          </p>
+        </div>
+        <div class="meet-card">
+          <article>
+            <span>Karwina</span>
+            <strong>Termin w przygotowaniu</strong>
+            <small>Miejsce i godzinę podamy wkrótce</small>
+          </article>
+          <article>
+            <span>Hawierzów</span>
+            <strong>Termin w przygotowaniu</strong>
+            <small>Miejsce i godzinę podamy wkrótce</small>
+          </article>
+          <article>
+            <span>Orłowa</span>
+            <strong>Termin w przygotowaniu</strong>
+            <small>Miejsce i godzinę podamy wkrótce</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="kontakt">
+        <div class="contact-copy">
+          <p class="eyebrow">Kontakt</p>
+          <h2>Bądźmy w kontakcie</h2>
+          <p>
+            Obserwuj Mariam w mediach społecznościowych, napisz wiadomość albo przyjdź spotkać się osobiście w regionie.
+          </p>
+        </div>
+        <div class="contact-card">
+          <a class="contact-link" href="mailto:mariam.szyja@pirati.cz">
+            <span class="contact-icon" aria-hidden="true">@</span>
+            <span>
+              <small>E-mail</small>
+              <strong>mariam.szyja@pirati.cz</strong>
+            </span>
+          </a>
+          <a class="contact-link" href="https://www.instagram.com/mariam_szyja/" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" focusable="false">
+                <rect x="4" y="4" width="16" height="16" rx="5"></rect>
+                <circle cx="12" cy="12" r="3.4"></circle>
+                <circle cx="17" cy="7" r="1"></circle>
+              </svg>
+            </span>
+            <span>
+              <small>Instagram</small>
+              <strong>@mariam_szyja</strong>
+            </span>
+          </a>
+          <a class="contact-link" href="https://x.com/MariamSzyja" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">
+              X
+            </span>
+            <span>
+              <small>X</small>
+              <strong>@MariamSzyja</strong>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Calendar previews are intentionally hidden until final calendar pages exist. -->
+      <section class="preview is-hidden" id="nahled" aria-hidden="true">
+        <div class="section-head">
+          <h2>Podgląd kalendarza <span>2027</span></h2>
+          <a href="#produkt">Zobacz więcej podglądów →</a>
+        </div>
+        <div class="month-row" aria-label="Podglądy miesięcy">
+          <article><span>Styczeń</span><strong>01</strong></article>
+          <article><span>Luty</span><strong>02</strong></article>
+          <article><span>Marzec</span><strong>03</strong></article>
+          <article><span>Kwiecień</span><strong>04</strong></article>
+          <article><span>Maj</span><strong>05</strong></article>
+          <article><span>Czerwiec</span><strong>06</strong></article>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div><strong>Odpowiedzialność</strong><span>za decyzje i ich skutki</span></div>
+        <div><strong>Sprawiedliwość</strong><span>zasady obowiązujące wszystkich</span></div>
+        <div><strong>Szansa</strong><span>dla naszego regionu i młodych ludzi</span></div>
+        <div><strong>Szacunek</strong><span>uczciwe traktowanie także przy różnych poglądach</span></div>
+      </section>
+
+      <section class="checkout transfer-section" id="objednavka">
+        <div class="section-copy">
+          <p class="eyebrow">Wsparcie kampanii</p>
+          <h2>Bezpieczne wsparcie kampanii</h2>
+          <p>
+            Ze względu na bezpieczeństwo i przejrzystość sama płatność odbędzie się na zewnętrznej zabezpieczonej stronie. Tutaj wybierzesz wysokość wsparcia, a potem przycisk przekieruje Cię na oficjalną stronę płatności kampanii.
+          </p>
+          <p>
+            Na tej stronie na razie nie zapisujemy danych płatniczych ani danych osobowych darczyńców. Pomiar odwiedzalności uruchomimy wyłącznie po zgodzie na analitykę.
+          </p>
+        </div>
+        <div class="transfer-card">
+          <div class="transfer-card-head">
+            <span>Wybrana kwota</span>
+            <strong data-order-total data-transfer-amount>100 Kč</strong>
+          </div>
+          <dl class="transfer-details">
+            <div>
+              <dt>Sposób wsparcia</dt>
+              <dd>Zewnętrzna zabezpieczona strona</dd>
+            </div>
+            <div>
+              <dt>Dane na tej stronie</dt>
+              <dd>Bez zapisywania danych płatniczych</dd>
+            </div>
+            <div>
+              <dt>Analityka</dt>
+              <dd>Tylko po wyrażeniu zgody</dd>
+            </div>
+          </dl>
+          <div class="transfer-note">
+            <strong>Część płatnicza będzie poza tą stroną.</strong>
+            <span>Ostateczny link do zabezpieczonej strony darowizn dodamy przed właściwym startem kampanii.</span>
+          </div>
+          <button class="button primary wide" type="button" data-add-cart>Przejdź do wsparcia</button>
+          <p class="transfer-ready">Jeśli link nie został jeszcze dodany, przycisk poinformuje, że strona płatności jest w przygotowaniu.</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="cookie-banner" data-cookie-banner role="dialog" aria-label="Ustawienia cookies">
+      <div class="cookie-summary">
+        <h2>Cookies</h2>
+        <p>
+          Używamy niezbędnych cookies do działania strony. Za Twoją zgodą włączymy także analitykę, aby wiedzieć, co na stronie działa i skąd przychodzą ludzie.
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button class="button secondary" type="button" data-cookie-settings>Ustawienia</button>
+        <button class="button secondary" type="button" data-cookie-essential>Tylko niezbędne</button>
+        <button class="button primary" type="button" data-cookie-all>Zezwól na wszystko</button>
+      </div>
+      <div class="cookie-settings is-hidden" data-cookie-settings-panel>
+        <label>
+          <span>
+            <strong>Niezbędne cookies</strong>
+            <small>Konieczne do prawidłowego działania strony.</small>
+          </span>
+          <input type="checkbox" checked disabled />
+        </label>
+        <label>
+          <span>
+            <strong>Analityczne cookies</strong>
+            <small>Pomagają mierzyć odwiedzalność i ulepszać treść strony.</small>
+          </span>
+          <input type="checkbox" data-cookie-category="analytics" />
+        </label>
+        <label>
+          <span>
+            <strong>Marketingowe cookies</strong>
+            <small>Pomagają oceniać kampanie i linki do wsparcia.</small>
+          </span>
+          <input type="checkbox" data-cookie-category="marketing" />
+        </label>
+        <div class="cookie-settings-actions">
+          <button class="button secondary" type="button" data-cookie-essential>Odrzuć opcjonalne</button>
+          <button class="button primary" type="button" data-cookie-save>Zapisz ustawienia</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <a href="#uvod">Mariam Szyja</a>
+      <span>Kandydatka do Senatu z regionu Karwiny</span>
+      <div class="footer-social" aria-label="Media społecznościowe">
+        <a href="https://www.instagram.com/mariam_szyja/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◎</span> Instagram</a>
+        <a href="https://x.com/MariamSzyja" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">X</span> X</a>
+      </div>
+      <a href="#kontakt">Kontakt</a>
+      <button class="footer-link" type="button" data-cookie-reset>Ustawienia cookies</button>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
