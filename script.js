@@ -1,14 +1,13 @@
 const variants = {
-  support100: { label: "Základní podpora", price: 100 },
-  support500: { label: "Silnější podpora", price: 500 },
-  support1000: { label: "Hlavní podpora", price: 1000 },
-  custom: { label: "Jiná částka", price: 0 },
+  support500: { label: "Základní podpora", price: 500 },
+  support1000: { label: "Silnější podpora", price: 1000 },
+  support2000: { label: "Hlavní podpora", price: 2000 },
 };
 
-const EXTERNAL_SUPPORT_URL = "";
+const EXTERNAL_SUPPORT_URL = "https://dary.pirati.cz/podpor-kraj/moravskoslezsky/adresne-dary/?p=220900152";
 const TAG_MANAGER_ID = "GTM-M6MSNH75";
 
-let activeVariant = "support100";
+let activeVariant = "support500";
 let quantity = 1;
 
 const formatPrice = (value) =>
@@ -22,22 +21,11 @@ const activePrice = document.querySelector("[data-active-price]");
 const orderTotal = document.querySelector("[data-order-total]");
 const transferAmount = document.querySelector("[data-transfer-amount]");
 const qtyOutput = document.querySelector("[data-qty]");
-const customAmountWrap = document.querySelector("[data-custom-amount-wrap]");
-const customAmountInput = document.querySelector("[data-custom-amount]");
 const cookieBanner = document.querySelector("[data-cookie-banner]");
 const cookieSettingsPanel = document.querySelector("[data-cookie-settings-panel]");
 const cookieCategoryInputs = document.querySelectorAll("[data-cookie-category]");
 
 function getSelectedSupport() {
-  if (activeVariant === "custom") {
-    const customPrice = Math.max(0, Math.round(Number(customAmountInput?.value || 0)));
-    return {
-      id: "custom",
-      label: "Jiná částka",
-      price: customPrice,
-    };
-  }
-
   return { id: activeVariant, ...variants[activeVariant] };
 }
 
@@ -51,7 +39,6 @@ function updateSupportSummary() {
   if (transferAmount) transferAmount.textContent = label;
   if (qtyOutput) qtyOutput.textContent = String(quantity);
 
-  customAmountWrap?.classList.toggle("is-hidden", activeVariant !== "custom");
 }
 
 document.querySelectorAll("input[name='variant']").forEach((input) => {
@@ -59,13 +46,8 @@ document.querySelectorAll("input[name='variant']").forEach((input) => {
     activeVariant = input.value;
     updateSupportSummary();
 
-    if (activeVariant === "custom") {
-      customAmountInput?.focus();
-    }
   });
 });
-
-customAmountInput?.addEventListener("input", updateSupportSummary);
 
 document.querySelector("[data-qty-minus]")?.addEventListener("click", () => {
   quantity = Math.max(1, quantity - 1);
@@ -80,16 +62,6 @@ document.querySelector("[data-qty-plus]")?.addEventListener("click", () => {
 document.querySelectorAll("[data-add-cart]").forEach((button) => {
   button.addEventListener("click", () => {
     const selected = getSelectedSupport();
-
-    if (selected.price <= 0) {
-      customAmountInput?.focus();
-      return;
-    }
-
-    if (!EXTERNAL_SUPPORT_URL) {
-      alert("Platební stránka se připravuje. Finální odkaz doplníme před spuštěním kampaně.");
-      return;
-    }
 
     const url = new URL(EXTERNAL_SUPPORT_URL);
     url.searchParams.set("amount", String(selected.price * quantity));
