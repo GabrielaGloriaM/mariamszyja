@@ -121,6 +121,35 @@ nav a:hover::after {
   gap: 12px;
 }
 
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.language-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  min-height: 34px;
+  padding: 0 9px;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.language-switch a.active {
+  color: var(--white);
+  background: var(--magenta);
+}
+
+.language-switch a:not(.active):hover {
+  color: var(--cyan);
+}
+
 .header-cta {
   display: inline-flex;
   align-items: center;
@@ -185,13 +214,13 @@ nav a:hover::after {
 
 .hero > img {
   position: absolute;
-  inset: 0;
+  inset: 0 0 0 auto;
   z-index: -3;
-  width: 100%;
+  width: min(54vw, 860px);
   height: 100%;
   object-fit: cover;
-  object-position: 56% top;
-  filter: saturate(1.08) contrast(1.1) brightness(0.94);
+  object-position: center 18%;
+  filter: saturate(1.04) contrast(1.08) brightness(0.92);
 }
 
 .hero-shade {
@@ -613,7 +642,8 @@ footer,
   }
 
   .hero > img {
-    object-position: 54% top;
+    width: min(48vw, 860px);
+    object-position: center 16%;
   }
 
   .hero-shade {
@@ -674,7 +704,8 @@ footer,
   }
 
   .hero > img {
-    object-position: center top;
+    width: min(46vw, 900px);
+    object-position: center 14%;
   }
 
   .hero-copy {
@@ -1916,6 +1947,14 @@ footer a:hover {
   .hero {
     min-height: auto;
     padding: 92px 14px 44px;
+  }
+
+  .hero > img {
+    inset: 0;
+    width: 100%;
+    height: 520px;
+    object-position: center top;
+    opacity: 0.62;
   }
 
   h1 {
