@@ -5,189 +5,424 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <title>Transparentni reklama | Mariam Szyja</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../styles.css?v=20260729-posun-fotek-2" />
+    <title>Transparentni Reklama</title>
     <style>
+      :root {
+        color-scheme: dark;
+        --bg: #18181b;
+        --panel: #27272a;
+        --panel-soft: #202023;
+        --line: #3f3f46;
+        --muted: #a1a1aa;
+        --text: #fafafa;
+        --soft-text: #d4d4d8;
+        --green: #22c55e;
+        --green-bg: rgba(34, 197, 94, 0.14);
+        --blue: #38bdf8;
+        --red: #ef4444;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
+        margin: 0;
         min-height: 100vh;
+        color: var(--text);
+        background: var(--bg);
+        font-family:
+          "Instrument Sans",
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.5;
       }
 
-      .hidden-page {
-        width: min(1120px, calc(100% - 44px));
+      a {
+        color: inherit;
+      }
+
+      .page {
+        width: min(100% - 32px, 960px);
         margin: 0 auto;
-        padding: clamp(108px, 12vw, 150px) 0 clamp(48px, 8vw, 90px);
+        padding: 34px 0 42px;
       }
 
-      .hidden-hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-        gap: clamp(28px, 5vw, 70px);
-        align-items: center;
-        min-height: 560px;
-      }
-
-      .hidden-hero h1 {
-        max-width: 720px;
-      }
-
-      .hidden-hero .lead {
-        max-width: 640px;
-      }
-
-      .hidden-portrait {
-        position: relative;
-        min-height: 520px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
+      .registry-card {
         overflow: hidden;
-        background:
-          linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.74)),
-          url("../hero-mariam-real.jpg?v=20260727") center 18% / cover no-repeat,
-          #111;
-        box-shadow: var(--shadow);
-      }
-
-      .hidden-portrait::after {
-        content: "";
-        position: absolute;
-        inset: auto 0 0;
-        height: 44%;
-        background: linear-gradient(180deg, transparent, #050505);
-      }
-
-      .info-panel {
-        display: grid;
-        gap: 14px;
-        margin-top: clamp(28px, 5vw, 54px);
-        padding: clamp(22px, 4vw, 38px);
         border: 1px solid var(--line);
-        border-radius: 8px;
+        border-radius: 18px;
+        background: var(--panel);
+        box-shadow: 0 24px 90px rgba(0, 0, 0, 0.22);
+      }
+
+      .hero {
+        padding: clamp(24px, 5vw, 44px);
+        border-bottom: 1px solid var(--line);
         background:
-          linear-gradient(145deg, rgba(184, 50, 104, 0.13), rgba(72, 185, 189, 0.05)),
-          #101011;
-        box-shadow: var(--shadow);
+          radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.1), transparent 32rem),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent);
       }
 
-      .info-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 10px;
+      .registry-label {
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: 0.95rem;
+        font-weight: 700;
       }
 
-      .info-grid article {
-        min-height: 145px;
-        padding: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(0, 0, 0, 0.28);
-      }
-
-      .info-grid span {
-        display: block;
-        margin-bottom: 10px;
-        color: var(--cyan);
-        font-weight: 900;
+      h1 {
+        margin: 0 0 24px;
+        font-size: clamp(2rem, 4.8vw, 3.75rem);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
         text-transform: uppercase;
       }
 
-      .info-grid strong,
-      .info-panel p {
-        font-family: var(--font-ui);
+      .hero-meta {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: end;
       }
 
-      .info-grid strong {
-        display: block;
-        color: var(--white);
-        font-size: 1.12rem;
+      .subject {
+        display: grid;
+        gap: 7px;
       }
 
-      .info-panel p {
-        max-width: 760px;
-        margin: 0;
+      .subject strong {
+        font-size: clamp(1.35rem, 3vw, 2rem);
+        line-height: 1.15;
+      }
+
+      .subject span,
+      .published span {
         color: var(--muted);
-        font-size: 1.05rem;
-        line-height: 1.62;
+        font-size: 0.92rem;
       }
 
-      @media (max-width: 900px) {
-        .hidden-hero,
-        .info-grid {
+      .status {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        min-height: 30px;
+        padding: 0 12px;
+        border: 1px solid rgba(34, 197, 94, 0.34);
+        border-radius: 999px;
+        color: #86efac;
+        background: var(--green-bg);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .published {
+        display: grid;
+        gap: 4px;
+        text-align: right;
+      }
+
+      .published strong {
+        font-size: 1.05rem;
+      }
+
+      .content {
+        display: grid;
+        gap: 18px;
+        padding: clamp(18px, 4vw, 34px);
+      }
+
+      .section {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--panel-soft);
+      }
+
+      .section-title {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section-title span {
+        color: var(--muted);
+        font-weight: 900;
+      }
+
+      .section-title h2 {
+        margin: 0;
+        font-size: 1.08rem;
+        line-height: 1.3;
+      }
+
+      .fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        overflow: hidden;
+        border-radius: 0 0 14px 14px;
+        background: var(--line);
+      }
+
+      .field {
+        display: grid;
+        align-content: start;
+        gap: 7px;
+        min-height: 82px;
+        padding: 16px 18px;
+        background: var(--panel-soft);
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .field label {
+        color: var(--muted);
+        font-size: 0.88rem;
+        font-weight: 700;
+      }
+
+      .field strong,
+      .field p {
+        margin: 0;
+        color: var(--text);
+        font-size: 1rem;
+        font-weight: 650;
+        overflow-wrap: anywhere;
+      }
+
+      .field a {
+        color: #7dd3fc;
+        text-decoration: none;
+      }
+
+      .note {
+        margin: 0;
+        padding: 14px 18px 18px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .complaint {
+        display: grid;
+        gap: 16px;
+        padding: 18px 20px 20px;
+      }
+
+      .complaint p {
+        margin: 0;
+        color: var(--soft-text);
+      }
+
+      .report-link {
+        display: inline-flex;
+        justify-content: center;
+        width: fit-content;
+        min-height: 42px;
+        padding: 0 18px;
+        align-items: center;
+        border: 1px solid rgba(239, 68, 68, 0.36);
+        border-radius: 10px;
+        color: #fecaca;
+        background: rgba(239, 68, 68, 0.1);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      footer {
+        padding: 22px clamp(18px, 4vw, 34px) 30px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        text-align: center;
+      }
+
+      @media (max-width: 720px) {
+        .hero-meta,
+        .fields {
           grid-template-columns: 1fr;
         }
 
-        .hidden-portrait {
-          min-height: 440px;
-        }
-      }
-
-      @media (max-width: 600px) {
-        .hidden-page {
-          width: min(100% - 28px, 1120px);
-          padding-top: 92px;
-        }
-
-        .hidden-portrait {
-          min-height: 360px;
+        .published {
+          text-align: left;
         }
       }
     </style>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html#uvod" aria-label="Mariam Szyja domu">
-        <strong>Mariam Szyja</strong>
-        <span>Senatorka pro Karvinsko</span>
-      </a>
-      <div class="header-actions">
-        <a class="header-cta" href="../index.html#podpora">Podporit</a>
-      </div>
-    </header>
+    <main class="page">
+      <article class="registry-card">
+        <header class="hero">
+          <p class="registry-label">Registr politicke reklamy</p>
+          <h1>Oznameni o transparentnosti</h1>
+          <div class="hero-meta">
+            <div class="subject">
+              <strong>Ceska piratska strana</strong>
+              <span>Kod oznameni: transparentnireklama1</span>
+              <span class="status">Zverejneno</span>
+            </div>
+            <div class="published">
+              <span>Zverejneno</span>
+              <strong>31. 07. 2026</strong>
+            </div>
+          </div>
+        </header>
 
-    <main class="hidden-page">
-      <section class="hidden-hero">
-        <div>
-          <p class="eyebrow">Transparentni reklama</p>
-          <h1><span>Informace</span> ke kampani.</h1>
-          <p class="lead">
-            Tato stranka slouzi jako samostatny informacni podklad k transparentni
-            reklame kampane Mariam Szyja do Senatu 2026.
-          </p>
-          <p class="lead secondary-lead">
-            Stranka neni soucasti hlavni navigace webu a je dostupna pouze pres
-            primy odkaz.
-          </p>
-        </div>
-        <div class="hidden-portrait" aria-label="Portret Mariam Szyja"></div>
-      </section>
+        <div class="content">
+          <section class="section">
+            <div class="section-title">
+              <span>01</span>
+              <h2>Identifikace zadavatele</h2>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Typ zadavatele</label>
+                <strong>politicka strana</strong>
+              </div>
+              <div class="field">
+                <label>Nazev / jmeno</label>
+                <strong>Ceska piratska strana</strong>
+              </div>
+              <div class="field">
+                <label>ICO / c. reg. 3. osoby</label>
+                <strong>71339698</strong>
+              </div>
+              <div class="field">
+                <label>E-mail</label>
+                <strong>info@pirati.cz</strong>
+              </div>
+              <div class="field full">
+                <label>Postovni adresa</label>
+                <strong>Na Morani 360/3, 128 00 Praha 2</strong>
+              </div>
+              <div class="field">
+                <label>Ulice a c. p.</label>
+                <strong>Na Morani 360/3</strong>
+              </div>
+              <div class="field">
+                <label>Mesto</label>
+                <strong>Praha 2</strong>
+              </div>
+              <div class="field">
+                <label>PSC</label>
+                <strong>12800</strong>
+              </div>
+              <div class="field">
+                <label>Stat</label>
+                <strong>Ceska republika</strong>
+              </div>
+            </div>
+          </section>
 
-      <section class="info-panel" aria-labelledby="reklama-info">
-        <p class="eyebrow">Udaje k reklame</p>
-        <h2 id="reklama-info">Transparentni oznaceni</h2>
-        <p>
-          Konkretni zadavatel, zpracovatel, format reklamy a dalsi povinne udaje
-          je mozne doplnit podle finalni podoby reklamniho sdeleni.
-        </p>
-        <div class="info-grid">
-          <article>
-            <span>Zadavatel</span>
-            <strong>Mariam Szyja / volebni kampan</strong>
-          </article>
-          <article>
-            <span>Ucel</span>
-            <strong>Podpora senatni kampane 2026</strong>
-          </article>
-          <article>
-            <span>Kontakt</span>
-            <strong>mariam.szyja@pirati.cz</strong>
-          </article>
+          <section class="section">
+            <div class="section-title">
+              <span>04</span>
+              <h2>Parametry kampane</h2>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Datum zahajeni *</label>
+                <strong>01. 08. 2026</strong>
+              </div>
+              <div class="field">
+                <label>Datum ukonceni *</label>
+                <strong>28. 10. 2026</strong>
+              </div>
+              <div class="field full">
+                <label>Vazba na volby / referendum / legislativni proces</label>
+                <strong>Volby do senatu 2026</strong>
+              </div>
+            </div>
+            <p class="note">* +/- 2-3 dny</p>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <span>05</span>
+              <h2>Financovani</h2>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Puvod financnich prostredku ci jinych vyhod</label>
+                <strong>kombinace</strong>
+              </div>
+              <div class="field">
+                <label>Puvod financnich prostredku ci jinych vyhod</label>
+                <strong>EU</strong>
+              </div>
+              <div class="field">
+                <label>Souhrnne castky za politicke reklamni sdeleni (v Kc bez DPH)</label>
+                <strong>30 250,00</strong>
+              </div>
+              <div class="field">
+                <label>Souhrnna hodnota jinych vyhod za politicke reklamni sdeleni (v Kc bez DPH)</label>
+                <strong>0,00</strong>
+              </div>
+              <div class="field">
+                <label>Souhrnne castky za politickou reklamni kampan (v Kc bez DPH)</label>
+                <strong>30 250,00</strong>
+              </div>
+              <div class="field">
+                <label>Souhrnna hodnota jinych vyhod za politickou reklamni kampan (v Kc bez DPH)</label>
+                <strong>0,00</strong>
+              </div>
+              <div class="field full">
+                <label>Metodika vypoctu odmeny</label>
+                <strong>Soucet veskerych nakladu</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <span>06</span>
+              <h2>Cileni a dosah</h2>
+            </div>
+            <div class="fields">
+              <div class="field full">
+                <label>Cileni na zaklade osobnich udaju</label>
+                <strong>Ne</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <span>07</span>
+              <h2>Mechanismus pro podavani stiznosti</h2>
+            </div>
+            <div class="complaint">
+              <p>
+                Moznost nahlaseni primo na emailovou adresu
+                <a href="mailto:reklamka@nastartuj.cz">reklamka@nastartuj.cz</a>.
+              </p>
+              <a class="report-link" href="mailto:reklamka@nastartuj.cz">Nahlasit obsah</a>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <span>08</span>
+              <h2>Predchozi pozastavena nebo ukoncena sdeleni</h2>
+            </div>
+            <div class="complaint">
+              <p>Ne</p>
+            </div>
+          </section>
         </div>
-      </section>
+
+        <footer>
+          Registr zverejnovan dle Narizeni EU 2024/900 o transparentnosti a cileni
+          politicke reklamy.
+        </footer>
+      </article>
     </main>
   </body>
 </html>
