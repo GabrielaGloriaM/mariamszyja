@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Transparentni reklama | Mariam Szyja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css?v=20260729-posun-fotek-2" />
+    <style>
+      body {
+        min-height: 100vh;
+      }
+
+      .hidden-page {
+        width: min(1120px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: clamp(108px, 12vw, 150px) 0 clamp(48px, 8vw, 90px);
+      }
+
+      .hidden-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+        gap: clamp(28px, 5vw, 70px);
+        align-items: center;
+        min-height: 560px;
+      }
+
+      .hidden-hero h1 {
+        max-width: 720px;
+      }
+
+      .hidden-hero .lead {
+        max-width: 640px;
+      }
+
+      .hidden-portrait {
+        position: relative;
+        min-height: 520px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.74)),
+          url("../hero-mariam-real.jpg?v=20260727") center 18% / cover no-repeat,
+          #111;
+        box-shadow: var(--shadow);
+      }
+
+      .hidden-portrait::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0;
+        height: 44%;
+        background: linear-gradient(180deg, transparent, #050505);
+      }
+
+      .info-panel {
+        display: grid;
+        gap: 14px;
+        margin-top: clamp(28px, 5vw, 54px);
+        padding: clamp(22px, 4vw, 38px);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(145deg, rgba(184, 50, 104, 0.13), rgba(72, 185, 189, 0.05)),
+          #101011;
+        box-shadow: var(--shadow);
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .info-grid article {
+        min-height: 145px;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.28);
+      }
+
+      .info-grid span {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--cyan);
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .info-grid strong,
+      .info-panel p {
+        font-family: var(--font-ui);
+      }
+
+      .info-grid strong {
+        display: block;
+        color: var(--white);
+        font-size: 1.12rem;
+      }
+
+      .info-panel p {
+        max-width: 760px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.62;
+      }
+
+      @media (max-width: 900px) {
+        .hidden-hero,
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hidden-portrait {
+          min-height: 440px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .hidden-page {
+          width: min(100% - 28px, 1120px);
+          padding-top: 92px;
+        }
+
+        .hidden-portrait {
+          min-height: 360px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html#uvod" aria-label="Mariam Szyja domu">
+        <strong>Mariam Szyja</strong>
+        <span>Senatorka pro Karvinsko</span>
+      </a>
+      <div class="header-actions">
+        <a class="header-cta" href="../index.html#podpora">Podporit</a>
+      </div>
+    </header>
+
+    <main class="hidden-page">
+      <section class="hidden-hero">
+        <div>
+          <p class="eyebrow">Transparentni reklama</p>
+          <h1><span>Informace</span> ke kampani.</h1>
+          <p class="lead">
+            Tato stranka slouzi jako samostatny informacni podklad k transparentni
+            reklame kampane Mariam Szyja do Senatu 2026.
+          </p>
+          <p class="lead secondary-lead">
+            Stranka neni soucasti hlavni navigace webu a je dostupna pouze pres
+            primy odkaz.
+          </p>
+        </div>
+        <div class="hidden-portrait" aria-label="Portret Mariam Szyja"></div>
+      </section>
+
+      <section class="info-panel" aria-labelledby="reklama-info">
+        <p class="eyebrow">Udaje k reklame</p>
+        <h2 id="reklama-info">Transparentni oznaceni</h2>
+        <p>
+          Konkretni zadavatel, zpracovatel, format reklamy a dalsi povinne udaje
+          je mozne doplnit podle finalni podoby reklamniho sdeleni.
+        </p>
+        <div class="info-grid">
+          <article>
+            <span>Zadavatel</span>
+            <strong>Mariam Szyja / volebni kampan</strong>
+          </article>
+          <article>
+            <span>Ucel</span>
+            <strong>Podpora senatni kampane 2026</strong>
+          </article>
+          <article>
+            <span>Kontakt</span>
+            <strong>mariam.szyja@pirati.cz</strong>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
