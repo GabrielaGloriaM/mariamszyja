@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Transparentní Reklama</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #18181b;
+        --panel: #27272a;
+        --panel-soft: #202023;
+        --line: #3f3f46;
+        --muted: #a1a1aa;
+        --text: #fafafa;
+        --soft-text: #d4d4d8;
+        --green: #22c55e;
+        --green-bg: rgba(34, 197, 94, 0.14);
+        --blue: #38bdf8;
+        --red: #ef4444;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--text);
+        background: var(--bg);
+        font-family:
+          "Instrument Sans",
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        width: min(100% - 32px, 960px);
+        margin: 0 auto;
+        padding: 34px 0 42px;
+      }
+
+      .registry-card {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--panel);
+        box-shadow: 0 24px 90px rgba(0, 0, 0, 0.22);
+      }
+
+      .hero {
+        padding: clamp(24px, 5vw, 44px);
+        border-bottom: 1px solid var(--line);
+        background:
+          radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.1), transparent 32rem),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent);
+      }
+
+      .registry-label {
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: 0.95rem;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 0 0 24px;
+        font-size: clamp(2rem, 4.8vw, 3.75rem);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+      }
+
+      .hero-meta {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: end;
+      }
+
+      .subject {
+        display: grid;
+        gap: 7px;
+      }
+
+      .subject strong {
+        font-size: clamp(1.35rem, 3vw, 2rem);
+        line-height: 1.15;
+      }
+
+      .subject span,
+      .published span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        min-height: 30px;
+        padding: 0 12px;
+        border: 1px solid rgba(34, 197, 94, 0.34);
+        border-radius: 999px;
+        color: #86efac;
+        background: var(--green-bg);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .published {
+        display: grid;
+        gap: 4px;
+        text-align: right;
+      }
+
+      .published strong {
+        font-size: 1.05rem;
+      }
+
+      .content {
+        display: grid;
+        gap: 18px;
+        padding: clamp(18px, 4vw, 34px);
+      }
+
+      .section {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--panel-soft);
+      }
+
+      .section-title {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section-title span {
+        color: var(--muted);
+        font-weight: 900;
+      }
+
+      .section-title h2 {
+        margin: 0;
+        font-size: 1.08rem;
+        line-height: 1.3;
+      }
+
+      .fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        overflow: hidden;
+        border-radius: 0 0 14px 14px;
+        background: var(--line);
+      }
+
+      .field {
+        display: grid;
+        align-content: start;
+        gap: 7px;
+        min-height: 82px;
+        padding: 16px 18px;
+        background: var(--panel-soft);
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .field label {
+        color: var(--muted);
+        font-size: 0.88rem;
+        font-weight: 700;
+      }
+
+      .field strong,
+      .field p {
+        margin: 0;
+        color: var(--text);
+        font-size: 1rem;
+        font-weight: 650;
+        overflow-wrap: anywhere;
+      }
+
+      .field a {
+        color: #7dd3fc;
+        text-decoration: none;
+      }
+
+      .note {
+        margin: 0;
+        padding: 14px 18px 18px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .complaint {
+        display: grid;
+        gap: 16px;
+        padding: 18px 20px 20px;
+      }
+
+      .complaint p {
+        margin: 0;
+        color: var(--soft-text);
+      }
+
+      .report-link {
+        display: inline-flex;
+        justify-content: center;
+        width: fit-content;
+        min-height: 42px;
+        padding: 0 18px;
+        align-items: center;
+        border: 1px solid rgba(239, 68, 68, 0.36);
+        border-radius: 10px;
+        color: #fecaca;
+        background: rgba(239, 68, 68, 0.1);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      footer {
+        padding: 22px clamp(18px, 4vw, 34px) 30px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        text-align: center;
+      }
+
+      @media (max-width: 720px) {
+        .hero-meta,
+        .fields {
+          grid-template-columns: 1fr;
+        }
+
+        .published {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <article class="registry-card">
+        <header class="hero">
+          <p class="registry-label">Registr politické reklamy</p>
+          <h1>Oznámení o transparentnosti</h1>
+          <div class="hero-meta">
+            <div class="subject">
+              <strong>Česká pirátská strana</strong>
+              <span>Kód oznámení: transparentnireklama2</span>
+              <span class="status">Zveřejněno</span>
+            </div>
+            <div class="published">
+              <span>Zveřejněno</span>
+              <strong>20. 08. 2026</strong>
+            </div>
+          </div>
+        </header>
+
+        <div class="content">
+          <section class="section">
+            <div class="section-title">
+              <span>01</span>
+              <h2>Identifikace zadavatele</h2>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Typ zadavatele</label>
+                <strong>politická strana</strong>
+              </div>
+              <div class="field">
+                <label>Název / jméno</label>
+                <strong>Česká pirátská strana</strong>
+              </div>
+              <div class="field">
+                <label>IČO / č. reg. 3. osoby</label>
+                <strong>71339698</strong>
+              </div>
+              <div class="field">
+                <label>E-mail</label>
+                <strong>info@pirati.cz</strong>
+              </div>
+              <div class="field full">
+                <label>Poštovní adresa</label>
+                <strong>Na Moráni 360/3, 128 00 Praha 2, Česká republika</strong>
+              </div>
+              <div class="field">
+                <label>Ulice a č. p.</label>
+                <strong>Na Moráni 360/3</strong>
+              </div>
+              <div class="field">
+                <label>Město</label>
+                <strong>Praha 2</strong>
+              </div>
+              <div class="field">
+                <label>PSČ</label>
+                <strong>12800</strong>
+              </div>
+              <div class="field">
+                <label>Stát</label>
+                <strong>Česká republika</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <span>04</span>
+              <h2>Parametry kampaně</h2>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Datum zahájení *</label>
+                <strong>03. 09. 2026</strong>
+              </div>
+              <div class="field">
+                <label>Datum ukončení *</label>
+                <strong>08. 09. 2026</strong>
+              </div>
+              <div class="field full">
+                <label>Vazba na volby / referendum / legislativní proces</label>
+                <strong>Volby do Senátu 2026</strong>
+              </div>
+            </div>
+            <p class="note">* +/- 2-3 dny</p>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <span>05</span>
+              <h2>Financování</h2>
+            </div>
+            <div class="fields">
+              <div class="field">
+                <label>Původ finančních prostředků či jiných výhod</label>
+                <strong>kombinace</strong>
+              </div>
+              <div class="field">
+                <label>Původ finančních prostředků či jiných výhod</label>
+                <strong>EU</strong>
+              </div>
+              <div class="field">
+                <label>Souhrnná částka za politické reklamní sdělení (v Kč bez DPH)</label>
+                <strong>76 200,00</strong>
+              </div>
+              <div class="field">
+                <label>Souhrnná hodnota jiných výhod za politické reklamní sdělení (v Kč bez DPH)</label>
+                <strong>0,00</strong>
+              </div>
+              <div class="field">
+                <label>Souhrnná částka za politickou reklamní kampaň (v Kč bez DPH)</label>
+                <strong>76 200,00</strong>
+              </div>
+              <div class="field">
+                <label>Souhrnná hodnota jiných výhod za politickou reklamní kampaň (v Kč bez DPH)</label>
+                <strong>0,00</strong>
+              </div>
+              <div class="field full">
+                <label>Metodika výpočtu odměny</label>
+                <strong>Součet veškerých nákladů</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <span>06</span>
+              <h2>Cílení a dosah</h2>
+            </div>
+            <div class="fields">
+              <div class="field full">
+                <label>Cílení na základě osobních údajů</label>
+                <strong>Ne</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <span>07</span>
+              <h2>Mechanismus pro podávání stížností</h2>
+            </div>
+            <div class="complaint">
+              <p>
+                Možnost nahlášení přímo na emailovou adresu
+                <a href="mailto:info@pirati.cz">info@pirati.cz</a>.
+              </p>
+              <a class="report-link" href="mailto:info@pirati.cz">Nahlásit obsah</a>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <span>08</span>
+              <h2>Předchozí pozastavená nebo ukončená sdělení</h2>
+            </div>
+            <div class="complaint">
+              <p>Ne</p>
+            </div>
+          </section>
+        </div>
+
+        <footer>
+          Registr zveřejňován dle Nařízení EU 2024/900 o transparentnosti a cílení
+          politické reklamy.
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
