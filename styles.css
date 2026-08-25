@@ -1178,6 +1178,46 @@ footer,
   box-shadow: var(--shadow);
 }
 
+.meet-calendar {
+  min-height: 430px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.meet-calendar iframe {
+  display: block;
+  width: 100%;
+  height: min(58vh, 540px);
+  min-height: 430px;
+  border: 0;
+  filter: grayscale(1) contrast(1.08) brightness(0.9);
+}
+
+.meet-note {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(72, 185, 189, 0.26);
+  background: rgba(72, 185, 189, 0.08);
+  color: rgba(255, 255, 255, 0.76);
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.meet-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.meet-actions .button {
+  justify-content: center;
+  min-height: 54px;
+  padding-inline: 18px;
+  text-align: center;
+}
+
 .meet-card article {
   display: grid;
   grid-template-columns: minmax(120px, 0.7fr) minmax(0, 1fr) auto;
@@ -2014,6 +2054,10 @@ footer a:hover {
     max-width: 14ch;
   }
 
+  .meet-calendar iframe {
+    height: 460px;
+  }
+
   .stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2190,6 +2234,10 @@ footer a:hover {
     width: 100%;
     min-height: 54px;
     padding-inline: 18px;
+  }
+
+  .meet-actions {
+    grid-template-columns: 1fr;
   }
 
   .month-row {
