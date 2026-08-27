@@ -1143,13 +1143,14 @@ footer,
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(440px, 1fr);
   gap: clamp(28px, 6vw, 78px);
-  align-items: stretch;
+  align-items: start;
 }
 
 .meet-copy {
   display: grid;
-  align-content: center;
+  align-content: start;
   gap: 16px;
+  padding-top: clamp(14px, 2vw, 26px);
 }
 
 .meet-copy h2 {
@@ -1167,7 +1168,7 @@ footer,
 
 .meet-card {
   display: grid;
-  gap: 12px;
+  gap: 16px;
   padding: clamp(22px, 4vw, 34px);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -1175,6 +1176,35 @@ footer,
     linear-gradient(145deg, rgba(184, 50, 104, 0.14), rgba(255, 255, 255, 0.035)),
     #101011;
   box-shadow: var(--shadow);
+}
+
+.meet-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-ui);
+}
+
+.meet-toolbar span {
+  color: var(--cyan);
+  font-size: 0.88rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.meet-toolbar a {
+  color: var(--white);
+  font-size: 0.88rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.meet-toolbar a:hover {
+  color: var(--magenta-soft);
 }
 
 .meet-note {
@@ -1203,16 +1233,26 @@ footer,
 
 .meet-events {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
+}
+
+.meet-month {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  color: var(--cyan);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .meet-event {
   display: grid;
-  align-content: center;
-  gap: 8px;
-  min-height: 128px;
-  padding: 18px 18px 16px;
+  grid-template-columns: minmax(86px, 0.22fr) minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  min-height: 92px;
+  padding: 14px 16px;
   border: 1px solid rgba(184, 50, 104, 0.46);
   border-radius: 8px;
   background:
@@ -1220,28 +1260,81 @@ footer,
     rgba(0, 0, 0, 0.28);
 }
 
-.meet-event span {
+.meet-date {
+  display: grid;
+  gap: 2px;
+  align-content: center;
+  min-height: 64px;
+  padding-right: 14px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.meet-date span {
+  color: var(--cyan);
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.meet-date strong {
   color: var(--magenta-soft);
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 2.2vw, 2.35rem);
+  font-size: clamp(1.95rem, 2.5vw, 2.75rem);
+  font-weight: 400;
   line-height: 0.95;
   text-transform: uppercase;
 }
 
-.meet-event strong {
+.meet-detail {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.meet-detail strong {
   color: #fff;
   font-family: var(--font-ui);
-  font-size: 1.08rem;
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
   font-weight: 900;
   line-height: 1.25;
 }
 
-.meet-event small {
+.meet-detail small {
   color: var(--cyan);
   font-family: var(--font-ui);
   font-size: 0.95rem;
   font-weight: 900;
   line-height: 1.1;
+}
+
+.meet-detail em {
+  color: rgba(255, 255, 255, 0.66);
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-style: normal;
+  line-height: 1.35;
+}
+
+.meet-add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid rgba(72, 185, 189, 0.5);
+  color: var(--white);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.meet-add:hover {
+  border-color: var(--magenta-soft);
+  background: rgba(184, 50, 104, 0.16);
 }
 
 .meet-card > article {
@@ -2081,7 +2174,7 @@ footer a:hover {
   }
 
   .meet-events {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .stats {
@@ -2268,6 +2361,21 @@ footer a:hover {
 
   .meet-events {
     grid-template-columns: 1fr;
+  }
+
+  .meet-event {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .meet-date {
+    min-height: 58px;
+    padding-right: 10px;
+  }
+
+  .meet-add {
+    grid-column: 1 / -1;
+    width: 100%;
   }
 
   .month-row {
